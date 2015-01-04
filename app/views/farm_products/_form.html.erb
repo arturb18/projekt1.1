@@ -1,0 +1,25 @@
+<%= form_for(@farm_product) do |f| %>
+  <% if @farm_product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@farm_product.errors.count, "error") %> prohibited this farm_product from being saved:</h2>
+
+      <ul>
+      <% @farm_product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :farm_id %><br>
+    <%= f.text_field :farm_id %>
+  </div>
+  <div class="field">
+    <%= f.label :product_id %><br>
+    <%= f.text_field :product_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
