@@ -5,7 +5,7 @@ gem 'therubyracer'
 gem 'less-rails'
 
 gem 'devise'
-
+gem 'faker'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
