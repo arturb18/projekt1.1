@@ -12,3 +12,8 @@
               offer: Faker::Name.first_name, email: Faker::Internet.email, address: Faker::Address.city)
 
 end
+
+10.times do
+  Product.create(name: Faker::Name.first_name, description: Faker::Lorem.sentence,
+              quality: Faker::Name.first_name)
+end
