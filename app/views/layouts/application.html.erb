@@ -31,15 +31,13 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Wiecej
             <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="about">O nas</a></li>
-            <li><a href="#">Nasz zespół</a></li>
-            <li><a href="#">Kontakt</a></li>
+            <%= content_tag(:li, link_to('O nas', about_index_path), class: ('active' if params[:controller] == 'about' ))  %>
+            <%= content_tag(:li, link_to('Zespół', about_index_path), class: ('active' if params[:controller] == 'about' ))  %>
+            <%= content_tag(:li, link_to('Kontakt', about_index_path), class: ('active' if params[:controller] == 'about' ))  %>
+            
             <li class="divider"></li>
-            <li><a href="farms">Gospodarstwa</a></li>
-            <li class="divider"></li>
-            <li><a href="products">Produkty</a></li>
-            <li class="divider"></li>
-            <!--<li><a <%= render 'admin/sidebar' %> >Admin panel</a></li>-->
+            <%= content_tag(:li, link_to('Gospodarstwa', farms_path), class: ('divider' if params[:controller] == 'farms' ))  %>
+            <%= content_tag(:li, link_to('Produkty', products_path), class: ('divider' if params[:controller] == 'products' ) )%>
           </ul>
         </li>
       </ul>
