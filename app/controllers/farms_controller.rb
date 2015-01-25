@@ -1,4 +1,5 @@
 class FarmsController < ApplicationController
+  skip_before_action :authenticate_user!
   before_action :set_farm, only: [:show, :edit, :update, :destroy]
 
   # GET /farms
@@ -24,7 +25,7 @@ class FarmsController < ApplicationController
   # POST /farms
   # POST /farms.json
   def create
-    @farm = Farm.new(farm_params)
+    @farm = current_user.farms.create(farm_params)
 
     respond_to do |format|
       if @farm.save

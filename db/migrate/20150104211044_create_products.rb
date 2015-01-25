@@ -6,10 +6,9 @@ class CreateProducts < ActiveRecord::Migration
       t.text :description
       t.string :quality
       t.string :available_time
-      t.references :category, index: true
-
       t.timestamps null: false
+      t.references :user, index: true
     end
-    add_foreign_key :products, :categories
-  end
+       add_foreign_key :products, :user
+    end
 end

@@ -1,4 +1,6 @@
 class FarmProductsController < ApplicationController
+  
+  skip_before_action :authenticate_user!
   before_action :set_farm_product, only: [:show, :edit, :update, :destroy]
 
   # GET /farm_products

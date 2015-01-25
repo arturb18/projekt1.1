@@ -49,8 +49,10 @@
         <td><%= farm.address %></td>
         <td><%= farm.phone %></td>
         <td><%= link_to 'Show', farm %></td>
+        <% if is_my_farm?(farm) %>
         <td><%= link_to 'Edit', edit_farm_path(farm) %></td>
         <td><%= link_to 'Destroy', farm, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+        <% end %>
       </tr>
   <% end %>
   </tbody>
