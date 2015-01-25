@@ -35,6 +35,10 @@
     <%= f.label :phone %><br>
     <%= f.telephone_field :phone %>
   </div>
+  <div class="field">
+    <%= f.label :products, "Produkty"  %>
+    <%= f.select(:products, options_for_select(Product.all.collect {|p| [p.name, p.id]}, :selected => @farm.products ), {} ,{:multiple => true, class: "selectpicker"} )%>  
+  </div> 
   <div class="actions">
     <%= f.submit %>
   </div>

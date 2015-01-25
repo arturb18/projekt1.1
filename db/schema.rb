@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150125094551) do
+ActiveRecord::Schema.define(version: 20150125135659) do
 
   create_table "farm_products", force: :cascade do |t|
     t.integer  "farm_id"
@@ -43,9 +43,13 @@ ActiveRecord::Schema.define(version: 20150125094551) do
     t.text     "description"
     t.string   "quality"
     t.string   "available_time"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.integer  "user_id"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "products", ["user_id"], name: "index_products_on_user_id"

@@ -8,7 +8,11 @@ class CreateProducts < ActiveRecord::Migration
       t.string :available_time
       t.timestamps null: false
       t.references :user, index: true
+
+
     end
        add_foreign_key :products, :user
+
     end
 end
+ 

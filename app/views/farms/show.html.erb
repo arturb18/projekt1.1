@@ -29,6 +29,7 @@
   <strong>Phone:</strong>
   <%= @farm.phone %>
 </p>
-
+<% if is_my_farm?(@farm) %>
 <%= link_to 'Edit', edit_farm_path(@farm) %> |
+<% end %>
 <%= link_to 'Back', farms_path %>

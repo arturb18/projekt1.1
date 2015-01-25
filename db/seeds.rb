@@ -5,15 +5,29 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+User.destroy_all
+Farm.destroy_all
+Product.destroy_all
+u = User.create(email:"arturb18@o2.pl", password:"zaq12wsx",admin: true)
 
 
 10.times do
-  Farm.create(name: Faker::Name.first_name, description: Faker::Lorem.sentence,
-              offer: Faker::Name.first_name, email: Faker::Internet.email, address: Faker::Address.city)
+f = Farm.create(name: Faker::Name.first_name, description: Faker::Lorem.sentence,
+              	offer: Faker::Name.first_name, email: Faker::Internet.email,
+               address: Faker::Address.city, user: u)
+
+p = Product.create(name: Faker::Name.first_name, description: Faker::Lorem.sentence,
+				price: Faker::Commerce.price,
+              	quality: Faker::Name.first_name , user_id: u.id )
 
 end
 
-10.times do
-  Product.create(name: Faker::Name.first_name, description: Faker::Lorem.sentence,
-              quality: Faker::Name.first_name)
+Farm.all.each do |farm|
+	farm.products << Product.all
+
+	4.times do 
+ 	farm.products << Product.create(name: Faker::Name.first_name, description: Faker::Lorem.sentence,
+				price: Faker::Commerce.price,
+              	quality: Faker::Name.first_name , user: u )
+	end
 end

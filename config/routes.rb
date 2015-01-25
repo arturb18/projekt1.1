@@ -8,8 +8,6 @@ Rails.application.routes.draw do
 
   root 'main#index'
 
-  resources :farm_products
-
   resources :products
 
   resources :farms

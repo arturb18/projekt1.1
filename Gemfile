@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'twitter-bootstrap-rails'
 gem 'therubyracer'
 gem 'less-rails'
-
+gem "paperclip"
 gem 'devise'
 gem 'faker'
 

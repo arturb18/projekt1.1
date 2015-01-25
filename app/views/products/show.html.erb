@@ -24,11 +24,8 @@
   <strong>Available time:</strong>
   <%= @product.available_time %>
 </p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @product.category %>
-</p>
-
+<%= image_tag @product.avatar.url(:thumb) %>
+<% if is_my_product?(@product) %>
 <%= link_to 'Edit', edit_product_path(@product) %> |
+<% end %>
 <%= link_to 'Back', products_path %>
